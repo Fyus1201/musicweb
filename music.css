@@ -1,0 +1,1320 @@
+* { margin: 0; padding: 0;}
+
+/*第一页面*/
+
+.section0  {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: relative;
+    background: black;
+}
+.section0 .image_photos {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: relative;
+    overflow: hidden;/*隐藏滑动条*/
+    top: 0;
+    /*background: red;*/
+}
+.section0 .image_photos ul{
+    list-style-type:none;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+    /*overflow: hidden;/!*隐藏滑动条*!/*/
+    top: 0;
+}
+.section0 .image_photos ul .onli{
+    margin: auto auto auto auto;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: scale(1.1, 1.1);/*放大*/
+    -webkit-transform: scale(1.1, 1.1);
+
+}
+.image_photos ul li{
+    opacity:0;
+}
+/*两者都可以*/
+/*.image_photos ul li:first-child{*/
+/*opacity:1;*/
+/*}*/
+
+.image_photos ul li:nth-child(1){
+    opacity:1;
+}
+
+.main_images {
+    margin: auto auto auto auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity:0.6;
+
+}
+
+.inout{
+
+    opacity:1;
+    animation: inout 10s;
+    -webkit-animation: inout 10s ;/*infinite 重复*/
+    /*不还原*/
+    animation-fill-mode: forwards;
+    animation-play-state:running;
+}
+.fllash{
+
+    opacity:0;
+    animation: fllash 10s;
+    -webkit-animation: fllash 10s ;/*infinite 重复*/
+    /*不还原*/
+    animation-fill-mode: forwards;
+    animation-play-state:running;
+}
+
+.splash_green_lite, .splash_umber, .splash_blue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 5;
+    /*background: yellow;*/
+}
+
+.section0 .name{
+    font-family: "FOT-筑紫明朝 Pr6 M";
+    font-size: 50px;
+}
+.section0 .name .font0{
+    width: 2.4em;
+    height: 3.4em;
+    position:absolute;
+    left:50%;
+    top:40%;
+    margin-left:-1.6em;
+    margin-top:-1.7em;
+
+    z-index: 11;
+    text-align: center;
+
+    color: white;
+    /*background: red;*/
+    /*display: block;*/
+    opacity: 0.8;
+
+    /*圆角 及圆角程度*/
+    /*border: 10px solid red;*/
+    border-radius: 35px;
+
+}
+
+.section0 .name .font0 .hh3{
+    margin: auto auto auto auto;
+    text-align: center;
+    width: auto;
+    height: auto;
+    top: 50%;
+    margin-top:-70px;
+    position:absolute;
+    line-height:70px;
+    /*background: blue;*/
+    vertical-align:middle;
+
+}
+.section0 .name .fontRadius{
+    width: 3em;
+    height: 4em;
+    position:absolute;
+    left:50%;
+    top:40%;
+    margin-left:-1.7em;
+    margin-top:-2em;
+    z-index: 11;
+    /*圆角 及圆角程度*/
+    /*border: 10px solid red;*/
+    border-radius: 50px;
+
+    animation: fontOpacity 3s;
+    -webkit-animation: fontOpacity 3s;
+}
+.section0 .name .scroll{
+    width: 2em;
+    height: 2em;
+    position:absolute;
+    left:50%;
+    top:80%;
+    margin-left:-1em;
+    z-index: 11;
+
+    background-image:url(http://o8yhyhsyd.bkt.clouddn.com/scroll.png) ;
+
+    background-repeat:no-repeat;
+    background-position:center;
+
+    /*鼠标样式*/
+    cursor: pointer;
+    animation: nextscroll 4s infinite ;
+    -webkit-animation: nextscroll 4s infinite ;
+}
+.section0 .font0{
+    width: 3em;
+    height: 4em;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-1.5em;
+    margin-top:-2.5em;
+
+    z-index: 11;
+    text-align: center;
+    font: 60px "Microsoft Yahei";
+    color: white;
+    /*background: red;*/
+    /*position: absolute;*/
+    display: block;
+    opacity: 1;
+
+    animation: fontOpacity 3s;
+    -webkit-animation: fontOpacity 3s;
+}
+
+.section0 .font0 .img{
+    opacity: 0;
+}
+
+.section0 .font0{
+    width: 3em;
+    height: 4em;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-1.5em;
+    margin-top:-2.5em;
+
+    z-index: 11;
+    text-align: center;
+    font: 50px "Microsoft Yahei";
+    color: white;
+    /*background: red;*/
+    /*position: absolute;*/
+    display: block;
+    opacity: 1;
+
+    animation: fontOpacity 3s;
+    -webkit-animation: fontOpacity 3s;
+}
+
+.section0 .image_background{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    background: black;
+    opacity: 0.0;
+    display: block;
+}
+
+@keyframes fontOpacity {
+    0% {
+        opacity: 0;
+    }
+    30%{
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+@-webkit-keyframes fontOpacity {
+    /* Safari & Chrome */
+    0% {
+        -webkit-opacity: 0;
+    }
+    30%{
+        -webkit-opacity: 0.2;
+    }
+    100% {
+        -webkit-opacity: 0.8;
+    }
+}
+@keyframes inout {
+    0% {
+        transform: scale(1.1, 1.1);
+        opacity: 1;
+    }
+    87.5% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes inout {
+    /* Safari & Chrome */
+    0% {
+        -webkit-transform: scale(1.1, 1.1);
+        -webkit-opacity: 1;
+    }
+    87.5% {
+        -webkit-transform: scale(1, 1);
+        -webkit-opacity: 1;
+    }
+    100%{
+        -webkit-transform: scale(1, 1);
+        -webkit-opacity: 0;
+    }
+}
+
+@keyframes fllash {
+    0% {
+        transform: scale(1.1, 1.1);
+        opacity: 0;
+    }
+    87.5% {
+        transform: scale(1.1, 1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.1, 1.1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fllash {
+    0% {
+        -webkit-transform: scale(1.1, 1.1);
+        -webkit-opacity: 0;
+    }
+    87.5% {
+        -webkit-transform: scale(1.1, 1.1);
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1.1, 1.1);
+        -webkit-opacity: 1;
+    }
+}
+
+@keyframes nextscroll {
+    0% {
+        top: 80%;
+        opacity: 0.5;
+    }
+    60% {
+        top: 80%;
+        opacity: 0.5;
+    }
+    80% {
+        top: 85%;
+        opacity: 1;
+    }
+    100% {
+        top: 80%;
+        opacity: 0.5;
+    }
+}
+@-webkit-keyframes nextscroll {
+    0% {
+        top: 80%;
+        opacity: 0.5;
+    }
+    60% {
+        top: 80%;
+        opacity: 0.5;
+    }
+    80% {
+        top: 85%;
+        opacity: 1;
+    }
+    100% {
+        top: 80%;
+        opacity: 0.5;
+    }
+}
+
+
+/*自适应*/
+@media screen and (min-width: 768px){
+    .image_photos ul li .main_images .pc_image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        margin-left:auto;
+        margin-top:auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        /*background-attachment:scroll;*/
+        /*position: absolute;*/
+    }
+    .image_photos ul li .main_images .sp_image {
+        display: none;
+    }
+
+    .section1 .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .section1 .bg img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /*第二页*/
+    .section1 .apph1 {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        z-index: 10;
+        width: 512px;
+        height: 45px;
+        margin-left: -256px;
+        margin-top: 60px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        opacity: 0;
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+    .section1 .apph1 {
+        background-image: url("http://o8yhyhsyd.bkt.clouddn.com/t2.png");
+    }
+    .active .apph1 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+    .p1 {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        width: 510px;
+        margin-left: -255px;
+        margin-top: 130px;
+        font-size: 16px;
+        color: #727F8C;
+        opacity: 0;
+        transition: all 1s;
+    }
+    .apph2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 10;
+        width: 512px;
+        height: 140px;
+        margin-left: -356px;
+        margin-top: -150px;
+        text-indent: -9999px;
+        opacity: 0;
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+
+    .apph2 {
+        background-repeat: no-repeat;
+        background-image: url("http://o8yhyhsyd.bkt.clouddn.com/t2.png");
+
+    }
+
+    .active .apph2 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+
+    .papp23 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 400px;
+        height: 300px;
+        margin-top: -80px;
+        margin-left: -350px;
+
+    }
+
+    .apph3 {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        z-index: 10;
+        width: 512px;
+        height: 145px;
+        margin-right: -452px;
+        margin-top: -160px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        opacity: 0;
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+
+    .apph3 {
+        background-image: url("http://o8yhyhsyd.bkt.clouddn.com/t2.png");
+    }
+
+    .active .apph3 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+    .papp33 {
+        position: absolute;
+
+        right: 50%;
+        top: 50%;
+        width: 400px;
+        height: 300px;
+        margin-top: -60px;
+        margin-right: -356px;
+    }
+
+}
+@media screen and (max-width: 767px){
+    .image_photos ul li .main_images .sp_image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        margin-left:auto;
+        margin-top:auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .image_photos ul li .main_images .pc_image {
+        display: none;
+    }
+
+    .section1 .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*width: 100%;*/
+        /*height: 100%;*/
+    }
+    .section1 .bg img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    /*第二页*/
+    .section1 .apph1 {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        z-index: 10;
+        width: 80%;
+        height: 22%;
+        margin-left: -40%;
+        margin-top: 10%;
+        text-indent: -9999px;
+
+        background-attachment: fixed;
+        opacity: 0;
+
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+
+    .section1 .apph1 {
+        background: url("http://o8yhyhsyd.bkt.clouddn.com/ts-2.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: center;
+    }
+    .active .apph1 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+
+    .p1 {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        width: 75%;
+        margin-left: -40%;
+        margin-top: 200px;
+        font-size: 16px;
+        color: #727F8C;
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .apph2 {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        z-index: 10;
+        width: 60%;
+        height: 17%;
+        margin-left: -50%;
+        /*margin-top: 10%;*/
+        text-indent: -9999px;
+
+        background-attachment: fixed;
+        opacity: 0;
+
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+
+    .apph2 {
+        background: url("http://o8yhyhsyd.bkt.clouddn.com/ts-2.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: center;
+    }
+    .active .apph2 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+    .papp23 {
+        position: absolute;
+
+        left: 50%;
+        top: 40%;
+        width: 48%;
+        height: 600px;
+        margin-left: -40%;
+    }
+    .apph3 {
+        position: absolute;
+        right: 50%;
+        top: 15%;
+        z-index: 10;
+        width: 60%;
+        height: 17%;
+        margin-right: -45%;
+        /*margin-top: 10%;*/
+        text-indent: -9999px;
+
+        background-attachment: fixed;
+        opacity: 0;
+
+        -webkit-transform:scale(0.5, 0.5);
+        transform:scale(0.5, 0.5);
+        transition: all 1s;
+    }
+
+    .apph3 {
+        background: url("http://o8yhyhsyd.bkt.clouddn.com/ts-2.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: center;
+    }
+    .active .apph3 {
+        opacity: 1;
+        -webkit-transform:scale(1, 1);
+        transform:scale(1, 1);
+        transition-delay: 0.7s;
+    }
+    .papp33 {
+        position: absolute;
+
+        right: 50%;
+        top: 40%;
+        width: 48%;
+        height: 600px;
+        /*margin-top: 160px;*/
+        margin-right: -38%;
+    }
+
+
+}
+/*最后*/
+@media screen and (min-width: 781px){
+    /*最后*/
+    .section5 .downblock .downwrap  {
+
+        height: 600px;
+        width: 100%;
+
+        position: absolute;
+        top: 50%;
+        margin-top: 0;
+        opacity: 0;
+        transition: all 1s;
+        /*background: aqua;*/
+
+    }
+    .active .downblock .downwrap {
+        margin-top: -300px;
+        opacity: 1;
+        transition-delay: 0.5s;
+    }
+
+    .section5 .downblock .downwrap .titlediv {
+
+        top: 100px;
+        left: -30px;
+        height: 180px;
+        width: 540px;
+        position: absolute;
+
+    }
+    .section5 .downblock .downwrap .downs {
+        /*display: none;*/
+        width: 60%;
+        left: 30%;
+        position: relative;
+        display: block;
+
+    }
+    .section5 .downblock .downwrap .downImage {
+        width: 200px;
+        height: 200px;
+        top: 350px;
+        left: 20px;
+        position: absolute;
+        font-size: 20px;
+        color: white;
+
+    }
+    .section5 .downblock .downwrap .downImage p{
+        color: white;
+        position:relative;
+        left:15%;
+        float:left
+    }
+    .section5 .downblock .downwrap .downButton {
+        /*display: none;*/
+        width: 200px;
+        height: 180px;
+        top: 350px;
+        left: 230px;
+        position: absolute;
+        /*background: blue;*/
+    }
+
+    .section5 .star {
+        height: 100px;
+        width: 100px;
+
+        right: 0;
+        bottom: 0;
+        float: right;
+        color: inherit;
+        /*background-color: transparent;*/
+        position:absolute;
+        opacity: 0;
+        /*鼠标样式*/
+        cursor: pointer;
+        transition: all 1s;
+    }
+
+    .section5 .star img {
+        height: 85%;
+        left: 0;
+        position:absolute;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 780px) {
+    .section5 .downblock .downwrap  {
+
+        height: 400px;
+        width: 100%;
+
+        position: absolute;
+        top: 50%;
+        margin-top: 0;
+        opacity: 0;
+        transition: all 1s;
+
+
+    }
+    .active .downblock .downwrap {
+        margin-top: -200px;
+        opacity: 1;
+        transition-delay: 0.5s;
+    }
+
+    .section5 .downblock .downwrap .titlediv {
+
+        top: 50px;
+
+        left: -20px;
+        height: 120px;
+        width: 95%;
+        position: absolute;
+    }
+    .section5 .downblock .downwrap .downs {
+        /*display: none;*/
+        width: 60%;
+        left: 30%;
+        position: relative;
+        display: block;
+
+    }
+    @media screen and (min-width: 601px){
+        .section5 .downblock .downwrap .downImage {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 190px;
+            left: -20px;
+            position: absolute;
+            font-size: 20px;
+
+        }
+        .section5 .downblock .downwrap .downImage p{
+            position:relative;
+            left:5%;
+            float:left  ;
+            color: white;
+        }
+        .section5 .downblock .downwrap .downButton {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 190px;
+            left: 170px;
+            position: absolute;
+            /*background: red;*/
+
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .section5 .downblock .downwrap .downImage {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 190px;
+            left: -40px;
+            position: absolute;
+            font-size: 20px;
+
+        }
+        .section5 .downblock .downwrap .downImage p{
+            position:relative;
+            left:10%;
+            float:left  ;
+            color: white;
+        }
+        .section5 .downblock .downwrap .downButton {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 190px;
+            left: 110px;
+            position: absolute;
+        }
+    }
+
+    .section5 .star {
+
+        display: none;
+    }
+
+}
+@media screen and (max-width: 479px){
+    .section5 .downblock .downwrap  {
+
+        height: 150px;
+        width: 140%;
+
+        position: absolute;
+        top: 50%;
+        margin-top: 0;
+        opacity: 0;
+        transition: all 1s;
+
+    }
+    .active .downblock .downwrap {
+        margin-top: -300px;
+
+        opacity: 1;
+        transition-delay: 0.5s;
+    }
+
+    .section5 .downblock .downwrap .titlediv {
+
+        top: 130px;
+        left: -40px;
+
+        height: 180px;
+        width: 100%;
+        position: absolute;
+
+    }
+    .section5 .downblock .downwrap .downs {
+        /*display: none;*/
+        width: 60%;
+        left: 18%;
+        position: relative;
+        display: block;
+
+    }
+    @media screen and (min-height: 621px){
+
+
+        .section5 .downblock .downwrap .downImage {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 390px;
+            left: 0;
+            position: absolute;
+            font-size: 20px;
+
+        }
+        .section5 .downblock .downwrap .downImage p{
+            position:relative;
+            left:8%;
+            float:left   ;
+            color: white;
+        }
+        .section5 .downblock .downwrap .downButton {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 220px;
+            left: -10px;
+            position: absolute;
+            /*background: red;*/
+
+        }
+
+        .section5 .star {
+            height: 100px;
+            width: 100px;
+
+            right: 0;
+            bottom: 0;
+            float: right;
+            color: inherit;
+            position:absolute;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        .section5 .star img {
+            height: 85%;
+            left: 0;
+            position:absolute;
+        }
+    }
+    @media screen and (max-height: 620px){
+        .section5 .downblock .downwrap .downImage {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 370px;
+            left: -20px;
+            position: absolute;
+            font-size: 20px;
+        }
+        .section5 .downblock .downwrap .downImage p{
+            position:relative;
+            left:8%;
+            float:left;
+            color: white;
+        }
+        .section5 .downblock .downwrap .downButton {
+            /*display: none;*/
+            width: 150px;
+            height: 150px;
+            top: 200px;
+            left: -30px;
+            position: absolute;
+            /*background: red;*/
+        }
+        .section5 .star {
+            display: none;
+        }
+    }
+}
+
+
+/*第三页面*/
+.section2 {
+    z-index: 10;
+}
+
+.bapp21 {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    height: 372px;
+    background: url(http://o8yhyhsyd.bkt.clouddn.com/bg41.png) 50% 0 no-repeat;
+}
+.bapp22 {
+    position: absolute;
+
+    right: 50%;
+    bottom: 50%;
+    width: 400px;
+    height: 650px;
+    margin-bottom: -600px;
+    margin-right: -430px;
+    opacity: 0;
+    transition: all 1s;
+}
+.bapp22 img{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 340px;
+}
+.active .bapp22  {
+    margin-bottom: -320px;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.p2 {
+    position: absolute;
+    font-size: 16px;
+    color: #727F8C;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.active .p2 {
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+
+/*第4页面*/
+.section3 {
+    z-index: 10;
+}
+
+.bapp31 {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    height: 372px;
+    background: url(http://o8yhyhsyd.bkt.clouddn.com/bg41.png) 50% 0 no-repeat;
+}
+.bapp32 {
+    position: absolute;
+
+    left: 50%;
+    bottom: 50%;
+    width: 400px;
+    height: 650px;
+    margin-bottom: -100px;
+    margin-left: -430px;
+    opacity: 0;
+    transition: all 1s;
+}
+.bapp32 img{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 340px;
+}
+.active .bapp32  {
+    margin-bottom: -320px;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.p3 {
+    position: absolute;
+    font-size: 16px;
+    color: #727F8C;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.active .p3 {
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+/*第5页面*/
+.section4 {
+    z-index: 10;
+}
+
+.bapp41 {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    height: 372px;
+    background: url(http://o8yhyhsyd.bkt.clouddn.com/bg41.png) 50% 0 no-repeat;
+    /*background: red;*/
+}
+.bapp42 {
+    position: absolute;
+
+    right: 50%;
+    bottom: 50%;
+    width: 400px;
+    height: 650px;
+    margin-bottom: -600px;
+    margin-right: -430px;
+    opacity: 0;
+    transition: all 1s;
+    /*background: royalblue;*/
+}
+.bapp42 img{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 340px;
+}
+.active .bapp42  {
+    margin-bottom: -320px;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.p4 {
+
+    position: absolute;
+    font-size: 16px;
+    color: #727F8C;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+.active .p4 {
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+
+
+/*第6页面*/
+
+.section5 {
+    z-index: 10;
+}
+.section5 .background5 {
+    margin: auto auto auto auto;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    /*超出部分隐藏*/
+    overflow:hidden;
+    position: absolute;
+    pointer-events: none;
+}
+
+.section5 .background5 img{
+    position: absolute;
+}
+
+.section5 .phonesblock {
+    width: 45%;
+    height: 85%;
+    color: inherit;
+    float: left;
+    position: absolute;
+
+    bottom: 0;
+}
+.section5 .phonesblock .phones {
+    width: 100%;
+    height: 95%;
+    margin-top: 200px;
+    margin-left: auto;
+    /*margin: 0 auto;*/
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+
+}
+.section5 .phonesblock .phones .phone1,
+.section5 .phonesblock .phones .phone2 {
+    /*opacity: 1.0;*/
+    position: absolute;
+}
+.section5 .phonesblock .phones .phone1 {
+
+    right: 150px;
+    bottom: 50%;
+    width: 250px;
+    margin-bottom: -250px;
+
+}
+.section5 .phonesblock .phones .phone2 {
+    bottom: 50%;
+    right: 50px;
+    width: 220px;
+    margin-bottom: -250px;
+}
+
+.iphoneScroll {
+    width: 189px;
+    height: 332px;
+    position: absolute;
+    overflow: hidden;
+
+    right: 65px;
+    bottom: 50%;
+    margin-bottom: -186px;
+}
+.iphoneScroll-wrap {
+    font-size: 0;
+    width: 945px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.iphoneScroll-wrap img {
+    width: 189px;
+    height: 332px;
+}
+
+.section5 .downblock {
+    width: 55%;
+    height: 100%;
+    float: right;
+    color: inherit;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.section5 .downblock .downwrap .down {
+
+    width: 80%;
+    left: 0;
+    position: relative;
+    display: block;
+
+}
+
+.section5 .downblock .downwrap .downImage .downImage0 {
+    display: block;
+    left: 10%;
+    width: 80%;
+    position:absolute;
+}
+.section5 .downblock .downwrap .downImage p {
+    display: block;
+    left: 10%;
+    top:82%;
+    text-align:center;
+    width: 80%;
+    position:absolute;
+}
+
+.button{
+    display:block;
+    position:relative;
+    z-index:1;
+    min-width:150px;
+    max-width:250px;
+    height: 25%;
+
+    margin:1em;
+    padding:0em 0em;
+    overflow:hidden;
+    vertical-align:middle;
+    -webkit-backface-visibility: hidden;
+    line-height:normal;
+    transition:color 0.3s ease-out;
+    -webkit-transition:color 0.3s ease-out;
+}
+.button:before,
+.button:after{
+    content:'';
+    position:absolute;
+    z-index:-1;
+    border-radius:inherit;
+    transition:all 0.3s ease-out;
+    -webkit-transition:all 0.3s ease-out;
+}
+.button span{
+    line-height:normal;
+    vertical-align:middle;
+}
+
+.OutIn{
+    color:#fff;
+    border-radius:4px;
+}
+
+.OutIn:hover{
+    color:#3f51b5;
+}
+.OutIn:after,.OutIn:before{
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius:inherit;
+}
+.OutIn:before{
+    border:2px solid #3f51b5;
+    background-color:#fff;
+    opacity:0;
+    -webkit-transform:scale3d(1.2,1.2,1);
+}
+
+.OutIn:hover:before{
+    opacity:1;
+    -webkit-transform:scale3d(1,1,1);
+}
+.OutIn:after{
+    background-color:#3f51b5;
+    -webkit-transform:scale3d(1,1,1);
+}
+.OutIn:hover:after{
+    opacity:0;
+    -webkit-transform:scale3d(0.5,0.5,1);
+}
+
+.section5 .androiddown {
+
+}
+.section5 .androiddown:hover {
+
+}
+
+.section5 .star img:hover {
+    transform: scale(1.1, 1.1);/*放大*/
+    -webkit-transform: scale(1.1, 1.1);
+}
+
+/*切换动画*/
+.active .phonesblock .phones {
+    margin-top: 0;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.active .star {
+    opacity: 1;
+    transition-delay: 0.9s;
+}
+
+

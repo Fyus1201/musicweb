@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="http://o8yhyhsyd.bkt.clouddn.com/normalize.css"/>-->
+    <style>
+        /*加载页*/
+        .ip-header {
+            position: absolute;
+            top: 0;
+            z-index: 900;
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        @keyframes headermax {
+            0%{
+                opacity: 1;
+                transform:scale(1, 1);
+            }
+            100%{
+                opacity: 0;
+                transform:scale(1.5, 1.5);
+            }
+        }
+
+        @-webkit-keyframes headermax {
+            0%{
+                opacity: 1;
+                -webkit-transform:scale(1, 1);
+            }
+            100%{
+                opacity: 0;
+                -webkit-transform:scale(1.5, 1.5);
+            }
+        }
+
+        @keyframes headermin {
+            0%{
+                opacity: 1;
+                transform:scale(1, 1);
+            }
+            100%{
+                opacity: 0;
+                transform:scale(0.5, 0.5);
+            }
+        }
+
+        @-webkit-keyframes headermin {
+            0%{
+                opacity: 1;
+                -webkit-transform:scale(1, 1);
+            }
+            100%{
+                opacity: 0;
+                -webkit-transform:scale(0.5, 0.5);
+            }
+        }
+
+        @media screen and (min-width: 768px){
+            .ip-name {
+                position: absolute;
+                left: 35%;
+                top: 30%;
+
+                width: 30%;
+                height: 30%;
+                cursor: default;
+
+                /*点击事件取消*/
+                pointer-events: none;
+
+            }
+            .ip-loader {
+                position: absolute;
+                left: 35%;
+                top: 60%;
+
+                width: 30%;
+                height: 30%;
+                opacity: 1;
+                cursor: default;
+                background: white;
+                /*点击事件取消*/
+                pointer-events: none;
+
+            }
+            .ip-inner {
+                display: block;
+                margin: 0 auto;
+
+                width:130px ;
+                height:130px;
+            }
+        }
+        @media screen and (max-width: 767px){
+
+            @media screen and (min-height: 376px){
+                .ip-name {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+
+                    width: 220px;
+                    height: 220px;
+
+                    margin-left: -110px;
+                    margin-top: -180px;
+                    /*光标样式*/
+                    cursor: default;
+                    /*点击事件取消*/
+                    pointer-events: none;
+
+                }
+                .ip-loader {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+
+                    width: 190px;
+                    height: 190px;
+
+                    margin-left: -95px;
+                    /*margin-top: 125px;*/
+                    opacity: 1;
+                    cursor: default;
+                    background: white;
+                    /*点击事件取消*/
+                    pointer-events: none;
+
+                }
+                .ip-inner {
+                    display: block;
+                    margin: 0 auto;
+
+                    width:120px ;
+                    height:120px;
+                }
+            }
+            @media screen and (max-height: 375px){
+                .ip-name {
+
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 150px;
+                    height: 150px;
+                    margin-left: -75px;
+                    margin-top: -100px;
+                    cursor: default;
+                    /*点击事件取消*/
+                    pointer-events: none;
+
+                }
+                .ip-loader {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: -50px;
+                    margin-top: 50px;
+                    opacity: 1;
+                    cursor: default;
+                    background: white;
+                    /*点击事件取消*/
+                    pointer-events: none;
+
+                }
+                .ip-inner {
+                    display: block;
+                    margin: 0 auto;
+                    width:100px ;
+                    height:100px;
+                }
+            }
+        }
+        @media screen and (min-width: 2560px){
+            @media screen and (min-height: 801px){
+                .ip-name img{
+
+                    height: 400px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (min-height: 376px) and (max-height: 800px){
+                .ip-name img{
+
+                    height: 240px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (max-height: 375px){
+                .ip-name img{
+
+                    height: 120px;
+
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+        }
+        @media screen and (min-width: 736px) and (max-width: 2559px){
+            @media screen and (min-height: 801px){
+                .ip-name img{
+
+                    height: 250px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (min-height: 376px) and (max-height: 800px){
+                .ip-name img{
+
+                    height: 160px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (max-height: 375px){
+                .ip-name img{
+
+                    height: 120px;
+
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+        }
+        @media screen and (max-width: 735px){
+            @media screen and (min-height: 801px){
+                .ip-name img{
+
+                    height: 160px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (min-height: 376px) and (max-height: 800px){
+                .ip-name img{
+
+                    height: 140px;
+                    display: block;
+                    margin: 0 auto;
+                    /*background-position: center;*/
+                }
+            }
+            @media screen and (max-height: 375px){
+                .ip-name img{
+
+                    height: 120px;
+                    display: block;
+                    margin: 0 auto;
+
+                }
+            }
+        }
+
+
+        .ip-header .ip-inner {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .ip-header .ip-logo svg path {
+            fill: #f8f7ff;
+        }
+
+        .ip-loader svg path {
+            fill: none;
+            /*填充颜色*/
+            stroke-width: 6;
+        }
+
+        .ip-loader-circlebg {
+            stroke: #dedede;
+        }
+
+        .ip-loader-circle {
+            -webkit-transition: stroke-dashoffset 0.2s;
+            transition: stroke-dashoffset 0.2s;
+            stroke: #000000;
+        }
+
+
+        .loaded .ip-logo svg path {
+            -webkit-transition: all 0.5s ease 0.3s;
+            transition: all 0.5s ease 0.3s;
+            fill: #fff;
+        }
+
+        .ip-name  {
+            opacity: 1;
+        }
+        /*动画*/
+        /* Initial animation of header elements */
+        .music{
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://o8yhyhsyd.bkt.clouddn.com/jquery.fullpage.css"/>
+    <link rel="stylesheet" type="text/css" href="music.css"/>
+
+</head>
+<body>
+<header class="ip-header">
+    <div class="ip-name">
+        <img src="musicImage/ipName.png" alt="">
+    </div>
+
+    <div class="ip-loader" id="ip-loader">
+        <svg class="ip-inner"   viewBox="0 0 80 80">
+            <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5 S23.649,10,40.5,10z"/>
+            <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+        </svg>
+    </div>
+
+    <script src="http://o8yhyhsyd.bkt.clouddn.com/jquery-1.11.2.min.js"></script>
+    <script src="mainLoader.js"></script>
+    <script src="loader.js"></script>
+</header>
+
+<div class="music">
+    <div class="section section0">
+
+        <div class="image_photos">
+            <ul>
+                <li class="onli">
+                    <span class="splash_green_lite"></span>
+                    <div class="main_images">
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160805_06-1200x840.jpg);" class="pc_image"></p>
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160805_06-750x1120.jpg);" class="sp_image"></p>
+                    </div>
+                </li>
+                <li class="onli">
+                    <span class="splash_umber"></span>
+                    <div class="main_images">
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160715_06-1200x840.jpg);" class="pc_image"></p>
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160715_19-750x1120.jpg);" class="sp_image"></p>
+                    </div>
+                </li>
+                <li class="onli">
+                    <span class="splash_blue"></span>
+                    <div class="main_images">
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160701_14-1200x840.jpg);" class="pc_image"></p>
+                        <p style="background-image:url(http://o8yhyhsyd.bkt.clouddn.com/160701_19-750x1120.jpg);" class="sp_image"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="image_background"></div>
+
+        <div class="name">
+            <div class="font0">
+                <img src="http://o8yhyhsyd.bkt.clouddn.com/titlename.png" alt="">
+            </div>
+            <div class="scroll"></div>
+        </div>
+
+    </div>
+
+    <div class="section section2">
+        <div class="bapp21"></div>
+        <div class="bapp22">
+            <img src="http://o8yhyhsyd.bkt.clouddn.com/IMG_0996.PNG" alt="">
+        </div>
+
+        <h3 class="apph2">聆听音乐里的旧时光</h3>
+        <div class="papp23">
+            <p class="p2">浅夏漫行，宁静安然，聆听音乐里的旧时光。在宁静中思索，倾听世界对你的倾诉。夜晚的宁静，犹如泡沫般细腻、如薄纱绵密的声响所编织而成。随空气存在，无色无味，比醇酒迷人，比鲜花芳香。</p>
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="bapp31"></div>
+        <div class="bapp32">
+            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-3.png" alt="">
+        </div>
+
+        <h3 class="apph3">聆听音乐里的旧时光</h3>
+        <div class="papp33">
+            <p class="p3">浅夏漫行，宁静安然，聆听音乐里的旧时光。在宁静中思索，倾听世界对你的倾诉。夜晚的宁静，犹如泡沫般细腻、如薄纱绵密的声响所编织而成。随空气存在，无色无味，比醇酒迷人，比鲜花芳香。</p>
+        </div>
+    </div>
+    <div class="section section4">
+        <div class="bapp41"></div>
+        <div class="bapp42">
+            <img src="http://o8yhyhsyd.bkt.clouddn.com/IMG_0995.PNG" alt="">
+        </div>
+
+        <h3 class="apph2">聆听音乐里的旧时光</h3>
+        <div class="papp23">
+            <p class="p4">浅夏漫行，宁静安然，聆听音乐里的旧时光。在宁静中思索，倾听世界对你的倾诉。夜晚的宁静，犹如泡沫般细腻、如薄纱绵密的声响所编织而成。随空气存在，无色无味，比醇酒迷人，比鲜花芳香。</p>
+        </div>
+    </div>
+    <div class="section section5">
+        <div class="background5">
+            <img src="Unknown/Unknown-0.jpeg" name="b1" />
+        </div>
+        <div class="div5">
+            <div class="phonesblock">
+                <div class="phones">
+                    <img src="musicImage/phone1.png" alt="" class="phone1" />
+                    <img src="http://o8yhyhsyd.bkt.clouddn.com/phone2.png" alt="" class="phone2" />
+
+                    <div class="iphoneScroll">
+                        <div class="iphoneScroll-wrap">
+                            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-1.png" />
+                            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-2.png" />
+                            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-3.png" />
+                            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-4.png" />
+                            <img src="http://o8yhyhsyd.bkt.clouddn.com/app-5.png" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="downblock">
+                <div class="downwrap">
+                    <div class="titlediv">
+                        <img src="http://o8yhyhsyd.bkt.clouddn.com/title.png" alt="" class="down" />
+                        <img src="http://o8yhyhsyd.bkt.clouddn.com/titles.png" alt="" class="downs" />
+                    </div>
+
+                    <div class="downImage">
+                        <img src="http://o8yhyhsyd.bkt.clouddn.com/1468902572.png" alt="" class="downImage0" />
+                        <p>扫描二维码</p>
+                    </div>
+                    <div class="downButton">
+                        <button class="button OutIn">
+                            <span>iOS下载</span>
+                        </button>
+                        <button class="button OutIn">
+                            <span>安卓下载</span>
+                        </button>
+                        <button class="button OutIn">
+                            <span>WP下载</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="star">
+                <img src="http://o8yhyhsyd.bkt.clouddn.com/pagetop.png" alt="" />
+            </div>
+
+            <div class="androiddown"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="http://o8yhyhsyd.bkt.clouddn.com/stats.min.js"></script>
+
+<script src="http://o8yhyhsyd.bkt.clouddn.com/jquery.fullPage.min.js"></script>
+<script src="http://o8yhyhsyd.bkt.clouddn.com/jquery.slimscroll.min.js"></script>
+<!--两者取一个-->
+<script src="http://o8yhyhsyd.bkt.clouddn.com/jquery.easing.min.js"></script>
+<!--<script type="text/javascript" src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js "></script>-->
+
+<script src="music.js"></script>
+</html>
