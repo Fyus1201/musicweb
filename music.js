@@ -372,6 +372,14 @@ setInterval( function () {
         }
         tick();
     });
+/*
+    $.ajaxSetup({
+        timeout: 1, // 1秒超时
+        error: function(request, status, maybe_an_exception_object) {
+            if(status == 'timeout')
+                alert("网断了");
+        }
+    });*/
 })(window, jQuery);
 
 
